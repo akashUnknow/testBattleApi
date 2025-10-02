@@ -17,9 +17,9 @@ public class OtpController {
     private final UserService userService;
     private UserDto userDto;
 
-    @GetMapping("")
-    public String Home(){
-        return "hello";
+    @GetMapping("/")
+    public String home() {
+        return "Welcome! You are logged in via Google OAuth2.";
     }
 
     @PostMapping("/send")
@@ -66,6 +66,6 @@ public class OtpController {
         }else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(result);
         }
-
     }
+
 }
